@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <div className="flex-1 flex flex-col gap-y-4 sm:gap-y-6">
+    <div className="flex-1 flex flex-col gap-y-8 sm:gap-y-12">
       <div>
         <h2
           tabIndex={0}
