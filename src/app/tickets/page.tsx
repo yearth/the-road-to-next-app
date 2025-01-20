@@ -18,7 +18,7 @@ export default function Tickets() {
         </p>
       </div>
 
-      <div className="flex-1 flex flex-col items-center gap-y-4">
+      <div className="flex-1 flex flex-col items-center gap-y-4 animate-fade-in">
         {initialTickets.map((ticket) => (
           <div
             key={ticket.id}
@@ -26,7 +26,7 @@ export default function Tickets() {
           >
             <h3 className="text-lg truncate font-semibold">{ticket.title}</h3>
             <p
-              className={clsx("text-sm truncate text-slate-500", {
+              className={clsx("text-sm truncate text-slate-600", {
                 "line-through": ticket.status === "DONE",
               })}
             >
