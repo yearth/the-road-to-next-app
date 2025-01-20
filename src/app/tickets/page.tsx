@@ -1,5 +1,6 @@
 import { initialTickets } from "@/mockData";
 import { ticket as ticketPath } from "@/paths";
+import clsx from "clsx";
 import Link from "next/link";
 
 export default function Tickets() {
@@ -23,8 +24,14 @@ export default function Tickets() {
             key={ticket.id}
             className="w-full max-w-[420px] p-4 border border-slate-100 rounded"
           >
-            <h3 className="text-lg truncate">{ticket.title}</h3>
-            <p className="text-sm truncate">{ticket.description}</p>
+            <h3 className="text-lg truncate font-semibold">{ticket.title}</h3>
+            <p
+              className={clsx("text-sm truncate text-slate-500", {
+                "line-through": ticket.status === "DONE",
+              })}
+            >
+              {ticket.description}
+            </p>
             <Link
               href={ticketPath(String(ticket.id))}
               className="text-sm underline"
