@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
 import { home, tickets } from "@/paths";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "The Road to Next App",
@@ -28,14 +29,14 @@ export default function RootLayout({
           `}
         >
           <div>
-            <Link href={home()} className="text-lg font-bold">
-              Home
-            </Link>
+            <Button variant="outline" asChild>
+              <Link href={home()}>Home</Link>
+            </Button>
           </div>
           <div>
-            <Link href={tickets()} className="text-sm underline">
-              Tickets
-            </Link>
+            <Button variant="outline" asChild>
+              <Link href={tickets()}>Tickets</Link>
+            </Button>
           </div>
         </nav>
 
