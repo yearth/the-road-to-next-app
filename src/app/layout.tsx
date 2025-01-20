@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
+import { home, tickets } from "@/paths";
 
 export const metadata: Metadata = {
   title: "The Road to Next App",
@@ -27,12 +28,12 @@ export default function RootLayout({
           `}
         >
           <div>
-            <Link href="/" className="text-lg font-bold">
+            <Link href={home()} className="text-lg font-bold">
               Home
             </Link>
           </div>
           <div>
-            <Link href="/tickets" className="text-sm underline">
+            <Link href={tickets()} className="text-sm underline">
               Tickets
             </Link>
           </div>
