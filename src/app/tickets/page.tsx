@@ -5,6 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { initialTickets } from "@/mockData";
 import { ticket as ticketPath } from "@/paths";
 import clsx from "clsx";
@@ -24,6 +25,8 @@ export default function Tickets() {
           All your tickets at one place
         </p>
       </div>
+
+      <Separator />
 
       <div className="flex-1 flex flex-col items-center gap-y-4 animate-fade-in">
         {initialTickets.map((ticket) => (

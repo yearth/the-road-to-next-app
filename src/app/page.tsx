@@ -1,3 +1,4 @@
+import { Separator } from "@/components/ui/separator";
 import { tickets } from "@/paths";
 import Link from "next/link";
 
@@ -15,6 +16,8 @@ export default function HomePage() {
           Your home place to start
         </p>
       </div>
+
+      <Separator />
 
       <div className="flex-1 flex flex-col items-center">
         <Link
