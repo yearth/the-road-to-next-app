@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Link from "next/link";
-import { home, tickets } from "@/paths";
 import { Button } from "@/components/ui/button";
+import { home, tickets } from "@/paths";
+import { LucideKanban } from "lucide-react";
+import type { Metadata } from "next";
+import Link from "next/link";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "The Road to Next App",
@@ -29,8 +30,11 @@ export default function RootLayout({
           `}
         >
           <div>
-            <Button variant="outline" asChild>
-              <Link href={home()}>Home</Link>
+            <Button variant="ghost" asChild>
+              <Link href={home()}>
+                <LucideKanban />
+                <h1 className="text-lg font-semibold">TicketyBounty</h1>
+              </Link>
             </Button>
           </div>
           <div>

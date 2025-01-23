@@ -9,7 +9,14 @@ import { Separator } from "@/components/ui/separator";
 import { initialTickets } from "@/mockData";
 import { ticket as ticketPath } from "@/paths";
 import clsx from "clsx";
+import { LucideCircleCheck, LucideFileText, LucidePencil } from "lucide-react";
 import Link from "next/link";
+
+const TICKET_ICONS = {
+  DONE: <LucideCircleCheck />,
+  IN_PROGRESS: <LucidePencil />,
+  OPEN: <LucideFileText />,
+};
 
 export default function Tickets() {
   return (
@@ -32,8 +39,8 @@ export default function Tickets() {
         {initialTickets.map((ticket) => (
           <Card key={ticket.id} className="w-full max-w-[420px]">
             <CardHeader>
-              <CardTitle className="flex gap-x-2">
-                <span>icon</span>
+              <CardTitle className="flex items-center gap-x-2">
+                <span>{TICKET_ICONS[ticket.status]}</span>
                 <span className="truncate">{ticket.title}</span>
               </CardTitle>
             </CardHeader>
