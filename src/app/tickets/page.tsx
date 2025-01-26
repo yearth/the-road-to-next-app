@@ -1,3 +1,4 @@
+import { Heading } from "@/components/heading";
 import {
   Card,
   CardContent,
@@ -5,7 +6,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { initialTickets } from "@/mockData";
 import { ticket as ticketPath } from "@/paths";
 import clsx from "clsx";
@@ -21,19 +21,10 @@ const TICKET_ICONS = {
 export default function Tickets() {
   return (
     <div className="flex-1 flex flex-col gap-y-8 sm:gap-y-12">
-      <div>
-        <h2
-          tabIndex={0}
-          className="text-2xl sm:text-3xl font-bold tracking-tight"
-        >
-          TicketsPage
-        </h2>
-        <p className="text-xs sm:text-sm text-muted-foreground">
-          All your tickets at one place
-        </p>
-      </div>
-
-      <Separator />
+      <Heading
+        title="TicketsPage"
+        description="All your tickets at one place"
+      />
 
       <div className="flex-1 flex flex-col items-center gap-y-4 animate-fade-in">
         {initialTickets.map((ticket) => (
