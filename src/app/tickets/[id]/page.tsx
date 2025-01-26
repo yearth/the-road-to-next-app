@@ -1,3 +1,4 @@
+import { Placeholder } from "@/components/placeholder";
 import { initialTickets } from "@/mockData";
 
 type TicketProps = {
@@ -11,7 +12,7 @@ export default async function Ticket({ params }: TicketProps) {
   const ticket = initialTickets.find((ticket) => ticket.id === Number(id));
 
   if (!ticket) {
-    return <div>Ticket not found</div>;
+    return <Placeholder label="Ticket not found" />;
   }
 
   return <div>Ticket</div>;
